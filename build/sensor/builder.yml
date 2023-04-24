@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  sensor:
+    build:
+      context: ../../
+      dockerfile: ./build/sensor/sensor.dockerfile
+      args:
+        GO_VER: ${GO_VER}
+    image: ${DEVICE_IMAGE:-oc/deviceimage:current}
+
